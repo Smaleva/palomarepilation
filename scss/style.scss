@@ -1,0 +1,57 @@
+$txt_color1: #5E534B;
+$txt_color2: #EC4839;
+$txt_color3: #ffffff;
+$h_color1: #025092;
+$h_color2: #3A6071;
+$inp_color: #7B7B7B;
+$bg_btn: #26C29C;
+$bg_btn_h: #1D9578;
+$bg_color: #EFEFEF;
+$bg_color1: #F8F6F6;
+$b_shadow: 0px 14px 21px rgba(0,0,0,0.15);
+$font: 'Roboto', sans-serif;
+$font1: 'Roboto Condensed', sans-serif;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+body {
+    color: $txt_color1;
+    line-height: calc(17/14);
+    background: $bg_color1;
+    font: {
+        family: $font;
+        weight: 400;
+        size: 14px;
+    }
+    header {
+        max-width: 960px;
+        margin: 0 auto;
+        max-height: 75px;
+    }
+    .flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header {
+        @extend .flex;
+        text-align: right;
+    }
+    .lead-wrapper {
+        background: transparent url("../img/main.jpg") no-repeat right center;
+        min-height: 805px;
+        position: relative;
+        .lead {
+            max-width: 650px;
+            background: $txt_color3;
+            position: absolute;
+            bottom: 2%;
+            right: 2%;
+            border: 3px solid $txt_color3;
+        }
+    }
+}
