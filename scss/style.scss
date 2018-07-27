@@ -15,6 +15,8 @@ $font1: 'Roboto Condensed',
 sans-serif;
 $font3: 'PT Sans',
 sans-serif;
+$font2: 'Merienda',
+sans-serif;
 $fz: 19px;
 @mixin box-shadow($b_shadow) {
     -moz-box-shadow: $b_shadow;
@@ -64,6 +66,9 @@ body {
         color: $h_color3;
         text-transform: uppercase;
         margin: 0;
+        @media screen and (max-width: 600px) {
+            font-size: x-large;
+        }
     }
     h2,
     .information-wrapper-subtitle,
@@ -76,6 +81,9 @@ body {
             family: $font;
         }
         line-height: 1.4;
+        @media screen and (max-width: 600px) {
+            font-size: x-large;
+        }
     }
     section {
         padding: 42px 0;
@@ -90,14 +98,22 @@ body {
             }
             margin: 27px 0;
         }
+        @media screen and (max-width: 600px) {
+            padding: 42px 5%;
+        }
     }
     .flex {
         display: flex;
         justify-content: space-between;
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+            align-items: center;
+        }
     }
     .header,
     .footer {
         @extend .flex;
+        align-items: center;
         text-align: right;
         min-height: 75px;
     }
@@ -118,6 +134,10 @@ body {
         &:focus {
             background: $bg_btn_h;
         }
+    }
+    .information-wrapper img,
+    .expert-article-certificate img {
+        width: 100%;
     }
     input {
         position: relative;
@@ -167,6 +187,10 @@ body {
         background-size: cover;
         min-height: 805px;
         position: relative;
+        @media screen and (max-width: 600px) {
+            background-size: contain;
+            background: $bg_color1 url("../img/main.jpg") top center no-repeat;
+        }
         .lead {
             max-width: 626px;
             max-height: 484px;
@@ -192,17 +216,27 @@ body {
                 @extend .flex;
                 flex-wrap: wrap;
                 margin: 35px 0 26px;
+                @media screen and (max-width: 600px) {
+                    padding: 0 5%;
+                }
                 & li {
                     width: 50%;
                     &::before {
                         content: "\2022\00a0";
                         color: $txt_color2;
                     }
+                    @media screen and (max-width: 600px) {
+                        width: 100%;
+                    }
                 }
                 &-link {
                     color: inherit;
                     display: inline-block;
                 }
+            }
+            @media screen and (max-width: 600px) {
+                top: 35%;
+                padding: 2% 2%;
             }
         }
     }
@@ -225,6 +259,9 @@ body {
         margin: 57px auto 0;
         & img {
             display: inline-block;
+            @media screen and (max-width: 600px) {
+                width: 100%;
+            }
         }
     }
     h2.information-wrapper-title,
@@ -280,6 +317,11 @@ body {
         margin: 0 auto;
         &>div {
             width: 50%;
+            @media screen and (max-width: 600px) {
+                width: 100%;
+                min-width: 100%;
+                min-height: auto;
+            }
         }
         &-image {
             border: 13px solid $txt_color3;
@@ -352,7 +394,10 @@ body {
         }
         .table-price {
             max-width: 1044px;
-            @include box-shadow(0px 7px 21px rgba(0, 0, 0, 0.15));
+            @include box-shadow(0px 7px 21px rgba(0,
+            0,
+            0,
+            0.15));
             background: $txt_color3;
             &-wrapper>div {
                 @extend .flex;
@@ -372,6 +417,20 @@ body {
             bottom: 5%;
             right: 14%;
             z-index: 3;
+            &>h3 {
+                color: $txt_color2;
+                font-size: $fz + 7px;
+                text-align: center;
+            }
+            &>p {
+                text-align: center;
+            }
+            @media screen and (max-width: 600px) {
+                min-width: 100%;
+                min-height: auto;
+                right: 0;
+                top: 0;
+            }
         }
     }
     .promo-wrapper2 {
@@ -384,17 +443,30 @@ body {
             color: $txt_color3;
             text-transform: uppercase;
             font-size: $fz * 2 + 1px;
+            @media screen and (max-width: 600px) {
+                font-size: x-large;
+            }
         }
         .promo-inner {
             min-width: 740px;
             max-width: 740px;
             right: 8%;
             bottom: 8%;
+            @media screen and (max-width: 600px) {
+                min-width: 100%;
+                min-height: auto;
+                right: 0;
+                top: 0;
+                width: 100%;
+            }
         }
         .promo {
             @extend .form;
             @extend .flex;
             padding: 56px 72px;
+            @media screen and (max-width: 600px) {
+                padding: 3% 3%;
+            }
             &-list {
                 margin-right: 5%;
                 ul {
@@ -410,9 +482,11 @@ body {
             }
             button.btn-link {
                 margin: 3% 0 0;
-                border-radius: 3px;
             }
         }
+    }
+    button.btn-link {
+        border-radius: 3px;
     }
     .faq-wrapper {
         .faq {
@@ -450,8 +524,54 @@ body {
         z-index: 2;
         border-radius: 3px;
     }
+    form.form {
+        min-width: 528px;
+        max-width: 528px;
+        min-height: 375px;
+        max-height: 375px;
+        position: relative;
+        padding: 57px 67px;
+        margin: 0 auto;
+        @media screen and (max-width: 600px) {
+            min-width: inherit;
+            min-height: auto;
+            padding: 3% 3%;
+        }
+        .form-input:first-child {
+            margin-top: 0;
+        }
+        &::after {
+            content: url("../img/bant.png");
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
     .form-input {
         position: relative;
         margin: 24px 0;
+    }
+    .how-to-find {
+        max-width: 410px;
+        right: 0;
+        max-height: 298px;
+        position: absolute;
+        background: $txt_color3;
+        @include box-shadow(0px 7px 21px rgba(0,
+        0,
+        0,
+        0.15));
+        padding: 2%;
+        font-size: small;
+        transform: translate(-15%, -115%);
+        @media screen and (max-width: 600px) {
+            transform: translate(0%,-113%);
+        }
+        h4 {
+            margin: 0;
+        }
+        ol li {
+            font-size: small;
+        }
     }
 }

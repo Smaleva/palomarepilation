@@ -37,6 +37,11 @@ body h1 {
   text-transform: uppercase;
   margin: 0;
 }
+@media screen and (max-width: 600px) {
+  body h1 {
+    font-size: x-large;
+  }
+}
 body h2,
 body .information-wrapper-subtitle,
 body .expert-wrapper-title,
@@ -46,6 +51,14 @@ body .info-wrapper-subtitle {
   font-weight: 100;
   font-family: "Roboto", sans-serif;
   line-height: 1.4;
+}
+@media screen and (max-width: 600px) {
+  body h2,
+body .information-wrapper-subtitle,
+body .expert-wrapper-title,
+body .info-wrapper-subtitle {
+    font-size: x-large;
+  }
 }
 body section {
   padding: 42px 0;
@@ -57,13 +70,26 @@ body section p {
   font-size: 19px;
   margin: 27px 0;
 }
+@media screen and (max-width: 600px) {
+  body section {
+    padding: 42px 5%;
+  }
+}
 body .flex, body .promo-wrapper2 .promo, body .price-wrapper .table-price-wrapper > div, body .expert-article-certificate, body .invitation, body .expert, body .lead-wrapper .lead-list, body .header,
 body .footer {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 600px) {
+  body .flex, body .promo-wrapper2 .promo, body .price-wrapper .table-price-wrapper > div, body .expert-article-certificate, body .invitation, body .expert, body .lead-wrapper .lead-list, body .header,
+body .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 body .header,
 body .footer {
+  align-items: center;
   text-align: right;
   min-height: 75px;
 }
@@ -83,6 +109,10 @@ body .btn-link {
 }
 body .btn-link:hover, body .btn-link:focus {
   background: #1D9578;
+}
+body .information-wrapper img,
+body .expert-article-certificate img {
+  width: 100%;
 }
 body input {
   position: relative;
@@ -131,6 +161,12 @@ body .lead-wrapper {
   min-height: 805px;
   position: relative;
 }
+@media screen and (max-width: 600px) {
+  body .lead-wrapper {
+    background-size: contain;
+    background: #F8F6F6 url("../img/main.jpg") top center no-repeat;
+  }
+}
 body .lead-wrapper .lead {
   max-width: 626px;
   max-height: 484px;
@@ -157,6 +193,11 @@ body .lead-wrapper .lead-list {
   flex-wrap: wrap;
   margin: 35px 0 26px;
 }
+@media screen and (max-width: 600px) {
+  body .lead-wrapper .lead-list {
+    padding: 0 5%;
+  }
+}
 body .lead-wrapper .lead-list li {
   width: 50%;
 }
@@ -164,9 +205,20 @@ body .lead-wrapper .lead-list li::before {
   content: "• ";
   color: #EC4839;
 }
+@media screen and (max-width: 600px) {
+  body .lead-wrapper .lead-list li {
+    width: 100%;
+  }
+}
 body .lead-wrapper .lead-list-link {
   color: inherit;
   display: inline-block;
+}
+@media screen and (max-width: 600px) {
+  body .lead-wrapper .lead {
+    top: 35%;
+    padding: 2% 2%;
+  }
 }
 body .text-inner ol {
   padding: 0;
@@ -188,6 +240,11 @@ body .image-inner {
 }
 body .image-inner img {
   display: inline-block;
+}
+@media screen and (max-width: 600px) {
+  body .image-inner img {
+    width: 100%;
+  }
 }
 body h2.information-wrapper-title,
 body .faq-wrapper h2 {
@@ -240,6 +297,13 @@ body .invitation, body .expert {
 }
 body .invitation > div, body .expert > div {
   width: 50%;
+}
+@media screen and (max-width: 600px) {
+  body .invitation > div, body .expert > div {
+    width: 100%;
+    min-width: 100%;
+    min-height: auto;
+  }
 }
 body .invitation-image, body .expert-image {
   border: 13px solid #ffffff;
@@ -311,6 +375,22 @@ body .promo-wrapper .promo-inner, body .promo-wrapper2 .promo-inner {
   right: 14%;
   z-index: 3;
 }
+body .promo-wrapper .promo-inner > h3, body .promo-wrapper2 .promo-inner > h3 {
+  color: #EC4839;
+  font-size: 26px;
+  text-align: center;
+}
+body .promo-wrapper .promo-inner > p, body .promo-wrapper2 .promo-inner > p {
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  body .promo-wrapper .promo-inner, body .promo-wrapper2 .promo-inner {
+    min-width: 100%;
+    min-height: auto;
+    right: 0;
+    top: 0;
+  }
+}
 body .promo-wrapper2 {
   background: transparent url("../img/main4.jpg") center center no-repeat;
   min-height: 668px;
@@ -322,14 +402,33 @@ body .promo-wrapper2 h2 {
   text-transform: uppercase;
   font-size: 39px;
 }
+@media screen and (max-width: 600px) {
+  body .promo-wrapper2 h2 {
+    font-size: x-large;
+  }
+}
 body .promo-wrapper2 .promo-inner {
   min-width: 740px;
   max-width: 740px;
   right: 8%;
   bottom: 8%;
 }
+@media screen and (max-width: 600px) {
+  body .promo-wrapper2 .promo-inner {
+    min-width: 100%;
+    min-height: auto;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+}
 body .promo-wrapper2 .promo {
   padding: 56px 72px;
+}
+@media screen and (max-width: 600px) {
+  body .promo-wrapper2 .promo {
+    padding: 3% 3%;
+  }
 }
 body .promo-wrapper2 .promo-list {
   margin-right: 5%;
@@ -346,6 +445,8 @@ body .promo-wrapper2 .promo-list ul li:last-child {
 }
 body .promo-wrapper2 .promo button.btn-link {
   margin: 3% 0 0;
+}
+body button.btn-link {
   border-radius: 3px;
 }
 body .faq-wrapper .faq-item {
@@ -377,9 +478,58 @@ body .form, body .promo-wrapper2 .promo {
   z-index: 2;
   border-radius: 3px;
 }
+body form.form, body .promo-wrapper2 form.promo {
+  min-width: 528px;
+  max-width: 528px;
+  min-height: 375px;
+  max-height: 375px;
+  position: relative;
+  padding: 57px 67px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 600px) {
+  body form.form, body .promo-wrapper2 form.promo {
+    min-width: inherit;
+    min-height: auto;
+    padding: 3% 3%;
+  }
+}
+body form.form .form-input:first-child, body .promo-wrapper2 form.promo .form-input:first-child {
+  margin-top: 0;
+}
+body form.form::after, body .promo-wrapper2 form.promo::after {
+  content: url("../img/bant.png");
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 body .form-input {
   position: relative;
   margin: 24px 0;
+}
+body .how-to-find {
+  max-width: 410px;
+  right: 0;
+  max-height: 298px;
+  position: absolute;
+  background: #ffffff;
+  -moz-box-shadow: 0px 7px 21px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 7px 21px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 7px 21px rgba(0, 0, 0, 0.15);
+  padding: 2%;
+  font-size: small;
+  transform: translate(-15%, -115%);
+}
+@media screen and (max-width: 600px) {
+  body .how-to-find {
+    transform: translate(0%, -113%);
+  }
+}
+body .how-to-find h4 {
+  margin: 0;
+}
+body .how-to-find ol li {
+  font-size: small;
 }
 
 /*# sourceMappingURL=style.css.map */
