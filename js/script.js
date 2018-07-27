@@ -1,4 +1,7 @@
-$('p.faq-item-active').on('click', function (e) {
-    e.preventDefault;
-    $('p.faq-item-hidden').toggleClass('faq-item-hidden');
+
+var faq = document.querySelector(".faq-item-active"),
+    faq_hidden = document.querySelector(".faq-item-hidden");
+faq.addEventListener("click", function (e) {
+    e.preventDefault();
+    faq_hidden.classList.toggle("faq-item-hidden");
 });
