@@ -84,6 +84,44 @@ body .btn-link {
 body .btn-link:hover, body .btn-link:focus {
   background: #1D9578;
 }
+body input {
+  position: relative;
+  background: transparent;
+  border: 0;
+  width: 100%;
+  min-height: 35px;
+  font-size: 16px;
+  border-bottom: 1px solid #D9F2EC;
+}
+body input:focus {
+  outline: 0;
+  border-bottom: 1px solid #26C29C;
+}
+body input[type=checkbox] {
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 100;
+}
+body input[type=text]:focus + label {
+  visibility: hidden;
+  opacity: 0;
+}
+body input[type=tel]:focus + label {
+  visibility: hidden;
+  opacity: 0;
+}
+body label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  font-weight: inherit;
+}
+body .check-input {
+  position: unset;
+}
 body .text-bold {
   font-weight: 700;
 }
@@ -151,7 +189,8 @@ body .image-inner {
 body .image-inner img {
   display: inline-block;
 }
-body h2.information-wrapper-title, body .faq-wrapper h2 {
+body h2.information-wrapper-title,
+body .faq-wrapper h2 {
   text-transform: uppercase;
   color: #3A6071;
   font-size: 39px;
@@ -292,6 +331,9 @@ body .promo-wrapper2 .promo-inner {
 body .promo-wrapper2 .promo {
   padding: 56px 72px;
 }
+body .promo-wrapper2 .promo-list {
+  margin-right: 5%;
+}
 body .promo-wrapper2 .promo-list ul {
   padding: 0;
   margin: 0;
@@ -302,15 +344,20 @@ body .promo-wrapper2 .promo-list ul li {
 body .promo-wrapper2 .promo-list ul li:last-child {
   margin: 0;
 }
+body .promo-wrapper2 .promo button.btn-link {
+  margin: 3% 0 0;
+  border-radius: 3px;
+}
 body .faq-wrapper .faq-item {
   width: 90%;
+  cursor: pointer;
 }
-body .faq-wrapper .faq-item p:first-child {
+body .faq-wrapper .faq-item-active {
   font-weight: 700;
   border-bottom: 1px solid #D9F2EC;
   position: relative;
 }
-body .faq-wrapper .faq-item p:first-child::after {
+body .faq-wrapper .faq-item-active::after {
   content: "›";
   transform: rotate(90deg);
   color: #26C29C;
@@ -319,7 +366,7 @@ body .faq-wrapper .faq-item p:first-child::after {
   font-size: 30px;
   font-weight: 100;
 }
-body .faq-wrapper .faq-item p:last-child {
+body .faq-wrapper .faq-item-hidden {
   display: none;
 }
 body .form, body .promo-wrapper2 .promo {
@@ -329,6 +376,10 @@ body .form, body .promo-wrapper2 .promo {
   box-shadow: 0px 14px 21px rgba(0, 0, 0, 0.15);
   z-index: 2;
   border-radius: 3px;
+}
+body .form-input {
+  position: relative;
+  margin: 24px 0;
 }
 
 /*# sourceMappingURL=style.css.map */

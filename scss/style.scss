@@ -119,6 +119,46 @@ body {
             background: $bg_btn_h;
         }
     }
+    input {
+        position: relative;
+        background: transparent;
+        border: 0;
+        width: 100%;
+        min-height: 35px;
+        font-size: $fz - 3px;
+        border-bottom: 1px solid #D9F2EC;
+        &:focus {
+            outline: 0;
+            border-bottom: 1px solid $bg_btn;
+        }
+        &[type=checkbox] {
+            width: 13px;
+            height: 13px;
+            display: inline-block;
+            cursor: pointer;
+            font-weight: 100;
+        }
+    }
+    input[type=text]:focus+label {
+        visibility: hidden;
+        opacity: 0;
+    }
+    input[type=tel]:focus+label {
+        visibility: hidden;
+        opacity: 0;
+    }
+    label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font: {
+            size: $fz - 3px;
+            weight: inherit;
+        }
+    }
+    .check-input {
+        position: unset;
+    }
     .text-bold {
         font-weight: 700;
     }
@@ -187,7 +227,8 @@ body {
             display: inline-block;
         }
     }
-    h2.information-wrapper-title, .faq-wrapper h2 {
+    h2.information-wrapper-title,
+    .faq-wrapper h2 {
         text-transform: uppercase;
         color: $h_color2;
         font-size: $fz * 2 + 1px;
@@ -355,6 +396,7 @@ body {
             @extend .flex;
             padding: 56px 72px;
             &-list {
+                margin-right: 5%;
                 ul {
                     padding: 0;
                     margin: 0;
@@ -366,13 +408,18 @@ body {
                     }
                 }
             }
+            button.btn-link {
+                margin: 3% 0 0;
+                border-radius: 3px;
+            }
         }
     }
     .faq-wrapper {
         .faq {
             &-item {
                 width: 90%;
-                & p:first-child {
+                cursor: pointer;
+                &-active {
                     font-weight: 700;
                     border-bottom: 1px solid #D9F2EC;
                     position: relative;
@@ -388,7 +435,7 @@ body {
                         }
                     }
                 }
-                & p:last-child {
+                &-hidden {
                     display: none;
                 }
             }
@@ -402,5 +449,9 @@ body {
         0.15));
         z-index: 2;
         border-radius: 3px;
+    }
+    .form-input {
+        position: relative;
+        margin: 24px 0;
     }
 }
